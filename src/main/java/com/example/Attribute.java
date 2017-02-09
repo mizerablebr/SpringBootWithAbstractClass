@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Color {
+public class Attribute {
 	
 	@Id
 	@GeneratedValue
@@ -16,7 +16,7 @@ public class Color {
 	private Animal animal;
 	
 	
-	public Color() {}
+	public Attribute() {}
 
 
 	public Long getId() {

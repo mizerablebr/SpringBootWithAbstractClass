@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.OneToMany;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 @Entity
 @Inheritance
 public abstract class Animal {
@@ -17,7 +19,8 @@ public abstract class Animal {
 	private Long id;
 	private String name;
 	@OneToMany(mappedBy ="animal")
-	private List<Color> colors;
+	private List<Attribute> attributes;
+	
 	public Long getId() {
 		return id;
 	}
@@ -30,12 +33,13 @@ public abstract class Animal {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<Color> getColors() {
-		return colors;
+	public List<Attribute> getAttributes() {
+		return attributes;
 	}
-	public void setColors(List<Color> colors) {
-		this.colors = colors;
+	public void setAttributes(List<Attribute> attributes) {
+		this.attributes = attributes;
 	}
+
 	
 	
 

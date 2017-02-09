@@ -1,6 +1,5 @@
 package com.example;
 
-import org.hibernate.loader.custom.Return;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +15,13 @@ public class DogService {
 	
 	public Dog find(Long id) {
 		
-		return dogRepository.findOne(id);
+		Animal animal = dogRepository.findOne(id); 
+		if (animal instanceof Dog) {
+			return (Dog) animal;
+		} else {
+			return null;
+		}
+	
 	}
 
 }
