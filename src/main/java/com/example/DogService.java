@@ -15,12 +15,8 @@ public class DogService {
 	
 	public Dog find(Long id) {
 		
-		Animal animal = dogRepository.findOne(id); 
-		if (animal instanceof Dog) {
-			return (Dog) animal;
-		} else {
-			return null;
-		}
+		return dogRepository.findOne(id); 
+		
 	
 	}
 

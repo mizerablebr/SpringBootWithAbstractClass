@@ -6,11 +6,11 @@
 <title>Add Dog</title>
 </head>
 <body>
-	<form th:action="@{/color}" method="post">
+	<form th:object="${attribute}" th:action="@{/color}" method="post">
   Color Name:
-  <input type="text" th:field="*{attribute.description}"/>
+  <input type="text" th:field="*{description}"/>
   
-  <input type="hidden" id="animal" name="animal" th:value="${dog.id}"/>
+  <input type="hidden" th:field="*{animal}"/>
 
   <input type="submit" value="Submit"/>
 </form> 
